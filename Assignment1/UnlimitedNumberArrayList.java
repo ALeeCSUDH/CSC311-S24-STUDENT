@@ -2,29 +2,19 @@
 
 import java.util.ArrayList;
 
-public class NumberArrayList
+public class UnlimitedNumberArrayList
 {
     private ArrayList<Integer> list;
-    private int maxSize;
 
-    public NumberArrayList(int size)
+    public UnlimitedNumberArrayList()
     {
         this.list = new ArrayList<>();
-        this.maxSize = size;
     }
 
     public int add(int number)
     {
-        if (list.size() < maxSize)
-        {
-            list.add(number);
-            return list.size() - 1;
-        }
-        else
-        {
-            System.out.println("NumberArrayList is full. Cannot add more elements.");
-            return -1;
-        }
+        list.add(number);
+        return list.size() - 1;
     }
 
     public int get(int index)
@@ -60,7 +50,6 @@ public class NumberArrayList
         {
             result[i] = indices.get(i);
         }
-        
         return result;
     }
 
@@ -112,14 +101,14 @@ public class NumberArrayList
         return sum / list.size();
     }
 
-    public void print()
+    public void print() 
     {
         System.out.println(list);
     }
 
     public static void main(String[] args)
     {
-        NumberArrayList myList = new NumberArrayList(500);
+    	UnlimitedNumberArrayList myList = new UnlimitedNumberArrayList();
 
         myList.add(1);
         myList.add(99);
